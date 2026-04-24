@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="author" content="리운자산운용" />
+<meta name="description" content="자산운용, 헤지펀드, 자산관리, 집합투자업, 전문투자형사모집합투자업, 사모펀드" />
+<meta name="keyword" content="자산운용, 헤지펀드, 자산관리, 집합투자업, 전문투자형사모집합투자업, 사모펀드" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="naver-site-verification" content="51b9663fe65f7974e0df3dc4e6075c37a3d2abf2" />
+<title>LeeWoon Asset Management</title>
+<style type="text/css">
+/* Font: Pretendard
+   License: https://github.com/orioncactus/pretendard/blob/main/LICENSE */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+*{box-sizing:border-box;}
+html,body{margin:0; padding:0;}
+body{background:#fff; color:#111; font-family:"Pretendard","Malgun Gothic","맑은 고딕",Arial,sans-serif; font-size:14px; line-height:1.6; word-break:keep-all;}
+a{color:inherit; text-decoration:none;}
+img{border:0; vertical-align:top;}
+.page{min-width:980px; overflow:hidden; background:#fff;}
+.inner{width:980px; margin:0 auto;}
+.hero{position:relative; height:500px; background:#263747 url("이미지/main_visual.png") no-repeat center top; background-size:cover;}
+.hero:before{content:""; position:absolute; left:0; top:0; width:100%; height:100%; background:rgba(21,33,45,.58);}
+.header{position:relative; z-index:20; height:62px; border-bottom:1px solid rgba(255,255,255,.12);}
+.brand{float:left; display:block; width:225px; padding-top:14px; color:#fff;}
+.brand_mark{float:left; width:35px; height:30px; margin:2px 8px 0 0; position:relative;}
+.brand_mark span{position:absolute; bottom:0; display:block; width:8px; height:29px; background:#fff; border-radius:6px; transform-origin:bottom center;}
+.brand_mark .m1{left:1px; transform:rotate(-22deg);}
+.brand_mark .m2{left:12px; height:19px; transform:rotate(18deg);}
+.brand_mark .m3{left:24px; height:34px; transform:rotate(18deg);}
+.brand_name{display:block; font-size:21px; line-height:21px; font-weight:bold; letter-spacing:0;}
+.brand_sub{display:block; margin-top:1px; font-size:10px; line-height:12px; color:rgba(255,255,255,.9); letter-spacing:.2px;}
+.nav{float:right; height:62px; color:#fff; font-size:14px; line-height:1; font-weight:800; text-align:right;}
+.nav ul{margin:0; padding:0; list-style:none;}
+.nav .nav_menu{height:62px;}
+.nav .nav_menu > li{position:relative; display:inline-block; height:62px; margin-left:42px; vertical-align:top;}
+.nav .nav_menu > li:after{content:""; display:none; position:absolute; left:-14px; right:-14px; top:62px; height:12px;}
+.nav .nav_menu > li:hover:after,
+.nav .nav_menu > li.active:after{display:block;}
+.nav .nav_link{display:block; height:62px; line-height:62px; color:rgba(255,255,255,.94);}
+.nav .nav_menu > li:hover .nav_link,
+.nav .nav_menu > li.active .nav_link{color:#fff; border-bottom:2px solid #fff;}
+.nav .sub_menu{display:none; position:absolute; z-index:40; top:70px; left:50%; width:172px; margin-left:-86px; padding:12px 0; background:rgba(6,20,38,.96); border:1px solid rgba(255,255,255,.14); text-align:center;}
+.nav .nav_menu > li:hover .sub_menu,
+.nav .nav_menu > li.active .sub_menu{display:block;}
+.nav .sub_menu a{display:block; padding:9px 12px; color:rgba(255,255,255,.82); font-size:13px; line-height:1.25; font-weight:700;}
+.nav .sub_menu a:hover{color:#fff; background:rgba(255,255,255,.08);}
+.hero_copy{position:relative; z-index:2; width:720px; padding-top:128px; color:#fff;}
+.home_link{display:inline-block; margin-bottom:22px; color:rgba(255,255,255,.72); font-size:11px; font-weight:800; letter-spacing:.4px;}
+.hero_copy h1{margin:0 0 16px; font-size:35px; line-height:1.4; font-weight:800; letter-spacing:0; word-break:keep-all;}
+.hero_copy p{margin:0; font-size:15px; line-height:1.7; color:rgba(255,255,255,.9);}
+.quick_links{position:absolute; z-index:3; left:0; bottom:-76px; width:100%;}
+.quick_links .inner{width:900px;}
+.quick_grid{overflow:hidden; margin:0 -8px;}
+.quick_card{float:left; width:33.333%; padding:0 8px;}
+.quick_card a{position:relative; display:block; height:152px; padding:26px 28px 22px; background:#fff; border:1px solid #e3e7eb; border-top:3px solid #2f637c; border-radius:2px; color:#101820;}
+.quick_card svg{display:none;}
+.quick_card strong{display:block; margin-bottom:12px; font-size:14px; line-height:1.25; font-weight:800; letter-spacing:0;}
+.quick_card span{display:block; color:#3f4852; font-size:13px; line-height:1.55; word-break:keep-all;}
+.quick_card em{position:absolute; right:24px; bottom:20px; color:#2f637c; font-style:normal; font-size:20px; line-height:1;}
+.content{background:#fff;}
+.main_info{overflow:hidden; padding:126px 0 52px;}
+.info_col{float:left; min-height:176px; padding:0 25px 0 24px; border-left:1px solid #e3e7eb;}
+.info_col:first-child{border-left:0; padding-left:0;}
+.info_col h2{position:relative; margin:0 0 16px; padding-top:22px; color:#222; font-size:19px; line-height:1.3; font-weight:800;}
+.info_col h2:before{content:""; position:absolute; left:0; top:0; width:34px; height:3px; background:#707780;}
+.info_col p{margin:0; color:#6c737b; font-size:14px; line-height:1.75; font-weight:600; word-break:keep-all;}
+.info_col .text_arrow{display:inline-block; margin-top:18px; color:#9aa4ad; font-size:26px; line-height:1;}
+.info_meta{margin-top:20px; color:#8a949d; font-size:12px; font-weight:700; letter-spacing:.2px;}
+.notice_col{width:25%;}
+.process_col{width:25%;}
+.intro_col{width:32%;}
+.link_col{width:18%; padding-right:0;}
+.intro_col p{color:#4f5862; font-size:13px; line-height:1.85;}
+.side_link{position:relative; display:block; min-height:74px; margin-bottom:10px; padding:16px 44px 15px 18px; border:1px solid #e3e7eb; background:#fff; color:#3a4350;}
+.side_link:after{content:"→"; position:absolute; right:17px; top:24px; color:#9aa4ad; font-size:20px; line-height:1;}
+.side_link strong{display:block; padding-top:4px; font-size:17px; line-height:1.2; font-weight:800;}
+.side_link span{display:block; color:#7c858e; font-size:11px; line-height:1.35;}
+.builder_body{display:none;}
+.footer{background:#07152a; color:#fff;}
+.footer_inner{overflow:hidden; width:980px; min-height:122px; margin:0 auto; padding:25px 0;}
+.footer .brand{padding-top:27px;}
+.footer_info{float:right; width:730px; padding-top:8px; color:rgba(255,255,255,.68); font-size:12px; line-height:1.8;}
+.footer_nav{padding:0 0 6px; color:rgba(255,255,255,.88); font-size:12px; line-height:1;}
+.footer_nav a{display:inline-block; margin-left:18px;}
+.footer_nav a:first-child{margin-left:0;}
+.footer_nav a:hover{color:#fff;}
+.footer_copy{margin:0; color:rgba(255,255,255,.55);}
+
+@media screen and (max-width:980px){
+    .page{min-width:0;}
+    .inner,.footer_inner{width:auto; margin:0 24px;}
+    .hero{height:560px;}
+    .header{height:auto; min-height:72px;}
+    .brand{width:190px;}
+    .nav{float:none; clear:both; height:auto; padding:6px 0 16px; text-align:left;}
+    .nav .nav_menu{height:auto;}
+    .nav .nav_menu > li{height:auto; margin:0 18px 8px 0;}
+    .nav .nav_menu > li:after{display:none;}
+    .nav .nav_link{height:auto; padding:6px 0; line-height:1.3;}
+    .nav .sub_menu{position:static; width:auto; margin:0; padding:8px 0 0; background:transparent; border:0; box-shadow:none; text-align:left;}
+    .nav .sub_menu a{display:inline-block; padding:5px 10px 5px 0; color:rgba(255,255,255,.72); font-size:11px;}
+    .hero_copy{width:auto; padding-top:88px;}
+    .hero_copy h1{font-size:28px; line-height:1.45;}
+    .quick_links{position:relative; bottom:auto; margin-top:44px;}
+    .quick_links .inner{width:auto;}
+    .quick_grid{margin:0;}
+    .quick_card{float:none; width:100%; padding:0 0 14px;}
+    .quick_card a{height:auto; min-height:132px;}
+    .main_info{padding:34px 0 30px;}
+    .info_col{float:none; width:auto; min-height:0; padding:24px 0; border-left:0; border-top:1px solid #e3e7eb;}
+    .info_col:first-child{border-top:0; padding-top:0;}
+    .footer_inner{height:auto; min-height:122px; padding-bottom:24px;}
+    .footer_info{float:none; clear:both; width:auto; padding-top:14px;}
+    .footer_nav{float:none; clear:both; padding-top:12px; text-align:left;}
+    .footer_nav a{margin:0 16px 8px 0;}
+}
+</style>
+<script type="text/javascript">
+(function(){
+    var naviControlMap = {
+        "info.page/greeting/": "1",
+        "info.page/sub1_2/": "1",
+        "info.page/location/": "1",
+        "info.page/business1/": "2",
+        "info.page/sub2_1/": "2",
+        "info.page/sub2_2/": "2",
+        "info.page/sub2_3/": "2",
+        "info.page/sub3_1/": "3",
+        "info.page/sub3_2/": "3",
+        "gallery//in": "3",
+        "board//bbs01": "4",
+        "board//bbs02": "4",
+        "board//bbs03": "4",
+        "board//data": "4",
+        "board//faq": "4"
+    };
+
+    function getParam(name){
+        var query = window.location.search.replace(/^\?/, "").split("&");
+        for(var i = 0; i < query.length; i++){
+            var pair = query[i].split("=");
+            if(decodeURIComponent(pair[0] || "") === name){
+                return decodeURIComponent((pair[1] || "").replace(/\+/g, " "));
+            }
+        }
+        return "";
+    }
+
+    function activateNavi(subcode){
+        if(!subcode){ return; }
+        var items = document.querySelectorAll("#navi .nav_menu > li");
+        for(var i = 0; i < items.length; i++){
+            items[i].className = items[i].className.replace(/\bactive\b/g, "").replace(/^\s+|\s+$/g, "");
+            if(items[i].getAttribute("data-subcode") === subcode){
+                items[i].className = (items[i].className ? items[i].className + " " : "") + "active";
+            }
+        }
+    }
+
+    window.onload = function(){
+        var key = getParam("act") + "/" + getParam("pcode") + "/" + getParam("bbs_code");
+        activateNavi(naviControlMap[key]);
+    };
+})();
+</script>
+</head>
+
+<body>
+<div class="page">
+    <div class="hero">
+        <div class="header">
+            <div class="inner">
+                <a href="#" class="brand">
+                    <span class="brand_mark"><span class="m1"></span><span class="m2"></span><span class="m3"></span></span>
+                    <span class="brand_name">LeeWoon</span>
+                    <span class="brand_sub">Asset Management Co., Ltd.</span>
+                </a>
+                <div id="navi" class="nav">
+                    <ul class="nav_menu">
+                        <li data-subcode="1">
+                            <a href="/?act=info.page&amp;pcode=greeting" class="nav_link">회사 소개</a>
+                            <div class="sub_menu">
+                                <a href="/?act=info.page&amp;pcode=greeting">CEO 인사말</a>
+                                <a href="/?act=info.page&amp;pcode=sub1_2">조직도</a>
+                                <a href="/?act=info.page&amp;pcode=location">오시는길</a>
+                            </div>
+                        </li>
+                        <li data-subcode="2">
+                            <a href="/?act=info.page&amp;pcode=sub2_1" class="nav_link">운용정보</a>
+                            <div class="sub_menu">
+                                <a href="/?act=info.page&amp;pcode=sub2_1">운용철학</a>
+                                <a href="/?act=info.page&amp;pcode=sub2_2">투자프로세스</a>
+                                <a href="/?act=info.page&amp;pcode=sub2_3">리스크관리</a>
+                            </div>
+                        </li>
+                        <li data-subcode="3">
+                            <a href="/?act=info.page&amp;pcode=sub3_1" class="nav_link">상품 및 서비스</a>
+                            <div class="sub_menu">
+                                <a href="/?act=info.page&amp;pcode=sub3_1">펀드정보</a>
+                                <a href="/?act=info.page&amp;pcode=sub3_2">투자자문</a>
+                            </div>
+                        </li>
+                        <li data-subcode="4">
+                            <a href="/?act=board&amp;bbs_code=bbs01" class="nav_link">공지사항</a>
+                            <div class="sub_menu">
+                                <a href="/?act=board&amp;bbs_code=bbs01">경영공시</a>
+                                <a href="/?act=board&amp;bbs_code=bbs02">펀드공시</a>
+                                <a href="/?act=board&amp;bbs_code=bbs03">언론보도자료 및 투자정보</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner">
+            <div class="hero_copy">
+                <a href="/" class="home_link">HOME</a>
+                <h1>고객의 자산을<br />더 이롭게 운용합니다.</h1>
+                <p>원칙과 전문성을 바탕으로 공정한 가치투자를 구현합니다.</p>
+            </div>
+        </div>
+
+        <div class="quick_links">
+            <div class="inner">
+                <div class="quick_grid">
+                    <div class="quick_card">
+                        <a href="/?act=info.page&amp;pcode=sub2_2">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M19.6 5h8.8l1.2 5.3c1.4.5 2.7 1.2 3.9 2.2l5.1-1.7 4.4 7.6-3.9 3.6c.1.7.2 1.4.2 2s-.1 1.3-.2 2l3.9 3.6-4.4 7.6-5.1-1.7c-1.2 1-2.5 1.7-3.9 2.2L28.4 43h-8.8l-1.2-5.3c-1.4-.5-2.7-1.2-3.9-2.2l-5.1 1.7L5 29.6l3.9-3.6c-.1-.7-.2-1.4-.2-2s.1-1.3.2-2L5 18.4l4.4-7.6 5.1 1.7c1.2-1 2.5-1.7 3.9-2.2L19.6 5z" />
+                                <circle cx="24" cy="24" r="7.4" />
+                            </svg>
+                            <strong>INVESTMENT PROCESS</strong>
+                            <span>투명하고 체계적인 투자 프로세스.<br />고객의 자산을 안전하게.</span>
+                            <em>&rarr;</em>
+                        </a>
+                    </div>
+                    <div class="quick_card">
+                        <a href="/?act=board&amp;bbs_code=bbs01">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M7 41h34" />
+                                <path d="M10 7v34" />
+                                <path d="M15 33V22" />
+                                <path d="M24 33V15" />
+                                <path d="M33 33V26" />
+                                <path d="M15 25l9-10 7 7 10-12" />
+                            </svg>
+                            <strong>MANAGEMENT DISCLOSURE</strong>
+                            <span>주요 경영 공시 및 정보 제공.<br />신뢰받는 파트너.</span>
+                            <em>&rarr;</em>
+                        </a>
+                    </div>
+                    <div class="quick_card">
+                        <a href="/?act=board&amp;bbs_code=bbs03">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M8 12h27v28H8z" />
+                                <path d="M35 18h5v22h-5" />
+                                <path d="M14 19h15" />
+                                <path d="M14 25h15" />
+                                <path d="M14 31h9" />
+                            </svg>
+                            <strong>COMPANY NEWS</strong>
+                            <span>최신 회사 뉴스 및 공지사항.<br />리운의 소식을 만나보세요.</span>
+                            <em>&rarr;</em>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="inner">
+            <div class="main_info">
+                <div class="info_col notice_col">
+                    <h2>경영공시</h2>
+                    <p>경영공시를 한 눈에<br />보실 수 있습니다.</p>
+                    <div class="info_meta">DISCLOSURE</div>
+                    <span class="text_arrow">&rarr;</span>
+                </div>
+                <div class="info_col process_col">
+                    <h2>투자프로세스</h2>
+                    <p>투자프로세스를<br />살펴봅니다.</p>
+                    <div class="info_meta">PROCESS</div>
+                    <span class="text_arrow">&rarr;</span>
+                </div>
+                <div class="info_col intro_col">
+                    <h2>리운자산운용</h2>
+                    <p>리운(이로운 리, 움직일 운)은 고객 자산을 항상 이롭게 이끈다는 의미로 열의와 정성을 다하여 높은 수익을 달성하겠습니다.</p>
+                    <p>전문적이고 성공적인 가치투자의 구현을 리운자산운용과 함께 하십시오.</p>
+                </div>
+                <div class="info_col link_col">
+                    <a href="/?act=info.page&amp;pcode=sub3_1" class="side_link">
+                        <span>한 곳에서 쉽고, 편리하게</span>
+                        <strong>펀드정보</strong>
+                    </a>
+                    <a href="/?act=info.page&amp;pcode=location" class="side_link">
+                        <span>LOCATION</span>
+                        <strong>오시는길</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="builder_body">{{BODY}}</div>
+    </div>
+
+    <div class="footer">
+        <div class="footer_inner">
+            <a href="#" class="brand">
+                <span class="brand_mark"><span class="m1"></span><span class="m2"></span><span class="m3"></span></span>
+                <span class="brand_name">LeeWoon</span>
+                <span class="brand_sub">Asset Management Co., Ltd.</span>
+            </a>
+            <div class="footer_info">
+                <div class="footer_nav">
+                    <a href="/?act=info.page&amp;pcode=greeting">회사소개</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보취급방침</a>
+                    <a href="#">이메일주소무단수집거부</a>
+                    <a href="/?act=info.page&amp;pcode=location">오시는길</a>
+                </div>
+                <p class="footer_copy">대표이사 : 김병구  |  사업자등록번호 : 107-87-67812  |  주소 : 서울 특별시 영등포구 여의공원로 101 1102호</p>
+                <p class="footer_copy">Copyright &copy; 리운자산운용(주) Copyright &copy; 2024 All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
